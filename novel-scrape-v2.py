@@ -26,7 +26,13 @@ chapter_paragraphs = chapter.find_all("p")
 # for loop, get text from html
 chapter_text = ""
 for paragraph in chapter_paragraphs:
-    chapter_text += paragraph.text + "\n"
+    chapter_text += paragraph.text + "\n\n"
+
+next_chapter_tag = soup.find("div", class_ = "btn-group")
+next_chapter_link = soup.find("a", id = "next_chap" )
+
 
 # print chapter titlr and number + chaper contents text
 print( chapter_title_n_number + chapter_text)
+
+print(next_chapter_link)
