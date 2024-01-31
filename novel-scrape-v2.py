@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 
+# open/create .txt file and give write premmision
+f = open('Novel_TEST_1.txt', 'w')
+
 # User agent , browser id or someyhing like that, this way site dosent block us
 
 headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
@@ -36,3 +39,9 @@ next_chapter_link = soup.find("a", id = "next_chap" )
 print( chapter_title_n_number + chapter_text)
 
 print(next_chapter_link)
+
+# write chaptercontent to file
+f.write(chapter_title_n_number + chapter_text)
+
+#close file
+f.close()
